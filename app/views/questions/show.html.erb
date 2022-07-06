@@ -1,0 +1,4 @@
+<h1> Вопрос номер <%= @question.id %> </h1>
+<p><%= @question.body %></p>
+<p> user_id: <b> <%= @question.user_id %> </b></p>
+<p><%=link_to "Список всех вопросов", questions_path %></p> 
