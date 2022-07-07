@@ -3,3 +3,5 @@
   <% @questions.each do |q| %>
   <p> <%= link_to "Вопрос #{q.id}", question_path(q) %> </p>
   <% end %>
+
+  <p><%= link_to "Создать новый вопрос", new_question_path %> </p>
