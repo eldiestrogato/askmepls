@@ -232,11 +232,14 @@ DEPENDENCIES
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   stimulus-rails
   turbo-rails
   web-console
   webdrivers
+
+RUBY VERSION
+   ruby 3.0.4p208
 
 BUNDLED WITH
    2.3.13
