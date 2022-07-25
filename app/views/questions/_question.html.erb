@@ -1,0 +1,18 @@
+<div class="container">
+  <%= question.body %>
+</div>
+
+<div>
+  <div>
+    <%= l(question.created_at, format: :short) %>
+  </div>
+
+  <div class="container">
+  <%= link_to icon('fa-solid', 'fa-pen-to-square', 'fa-5x'), edit_question_path(@question), title: 'Изменить вопрос' %>
+
+
+  <%= button_to icon('fa-solid', 'fa-trash-arrow-up'), question_path(@question), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, title: 'Удалить вопрос' %>
+
+<i class="fa-solid fa-computer fa-5x"></i>
+  </div>
+</div>

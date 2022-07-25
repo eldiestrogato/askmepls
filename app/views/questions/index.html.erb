@@ -1,7 +1,14 @@
+<div class="container" >
 <h2> Вопросы  </h2>
 
   <% @questions.each do |q| %>
-  <p> <%= link_to "Вопрос #{q.id}", question_path(q) %> </p>
+  <p> <%= link_to "Вопрос #{q.id}", question_path(q) , class: "btn btn-primary"%> </p>
   <% end %>
 
-  <p><%= link_to "Создать новый вопрос", new_question_path %> </p>
+  <p><%= link_to "Создать новый вопрос", new_question_path , class: "btn btn-warning"%> </p>
+
+
+  <p>
+    <%= render 'form', question: @question %>
+  </p>
+</div>
