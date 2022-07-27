@@ -1,18 +1,26 @@
-<div class="container">
+<div class="fs-4 pt-2 ms-2 ">
   <%= question.body %>
 </div>
-
+<hr>
 <div>
-  <div>
-    <%= l(question.created_at, format: :short) %>
-  </div>
 
   <div class="container">
-  <%= link_to icon('fa-solid', 'fa-pen-to-square', 'fa-5x'), edit_question_path(@question), title: 'Изменить вопрос' %>
+     <div class="row">
 
+        <div class="col fs-6 fst-italic text-muted text-left pb-2">
+          <%= l(question.created_at, format: :short) %>
+        </div>
 
-  <%= button_to icon('fa-solid', 'fa-trash-arrow-up'), question_path(@question), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, title: 'Удалить вопрос' %>
+        <div class="col-2">
+              <%= link_to "Изменить", edit_question_path(question),
+              title: 'Изменить вопрос' , class: "btn btn-warning btn-sm", style: "width: 150px;"%>
+        </div>
 
-<i class="fa-solid fa-computer fa-5x"></i>
+        <div class="col-8">
+              <%= button_to "Удалить", question_path(question), method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}},
+              title: 'Удалить вопрос' , class: "btn btn-danger btn-sm", style: "width: 150px;"%>
+        </div>
+
+      </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
-
+<div class="fs-6 pt-4">
 <%= form_with model: question do |form| %>
 
   <p> <%= form.label :body, 'Текст вопроса' %> </p>
 
-  <p> <%= form.text_area :body, rows: 5 %> </p>
+  <p> <%= form.text_area :body, rows: 5, style:"width: 800px;"%> </p>
 
   <p> <%= form.label :user_id %> </p>
 
@@ -12,3 +12,4 @@
   <p> <%= form.submit 'Сохранить' , class: "btn btn-success"%> </p>
 
 <% end %>
+  </div>

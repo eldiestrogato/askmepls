@@ -254,6 +254,7 @@ DEPENDENCIES
   redis (~> 4.0)
   sassc-rails
   selenium-webdriver
+  sprockets-rails
   sqlite3
   stimulus-rails
   turbo-rails

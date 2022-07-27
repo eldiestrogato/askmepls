@@ -1,3 +1,6 @@
-<h2> Редактирование вопроса <%= @question.id%> </h2>
-
+<div class="row mx-auto" style="width: 1200px;">
+<h2 class="container rounded-3 bg-light pt-2 pb-2 ms-5 mt-5"> Редактирование вопроса <%= @question.id%>   </h2>
+<div class="row rounded-3 bg-white ms-5 mb-3 pb-4">
 <%= render 'form', question: @question %>
+</div>
+</div>

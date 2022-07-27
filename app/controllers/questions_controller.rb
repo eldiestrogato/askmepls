@@ -3,9 +3,9 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[update show destroy edit]
 
   def create
-    q = Question.create(question_params)
+    question = Question.create(question_params)
 
-    redirect_to question_path(q)
+    redirect_to question_path(question)
   end
 
   def show
@@ -22,7 +22,6 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -33,7 +32,6 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-
     redirect_to questions_path
   end
 
