@@ -1,0 +1,25 @@
+<div class="row mx-auto" style="width: 1200px;">
+<h2 class="container rounded-3 bg-light pt-2 pb-2 ms-5 mt-5 text-center"> Присоединяйся к нам! </h2>
+<div class="row rounded-3 bg-white ms-5 mb-3 pb-4">
+
+<div class="fs-6 pt-4">
+<%= form_with model: @user do |form| %>
+
+  <p> <%= form.label :name, 'Ваше имя' %> </p>
+  <p> <%= form.text_field :name, rows: 5%> </p>
+
+  <p> <%= form.label :nickname, 'Никнейм' %> </p>
+  <p> <%= form.text_field :nickname %> </p>
+
+  <p> <%= form.label :email %> </p>
+  <p> <%= form.text_field :email %> </p>
+
+  <p> <%= form.label :password %> </p>
+  <p> <%= form.password_field :password %> </p>
+
+  <p> <%= form.submit 'Зарегистрироваться' , class: "btn btn-success"%> </p>
+
+<% end %>
+  </div>
+  </div>
+    </div>

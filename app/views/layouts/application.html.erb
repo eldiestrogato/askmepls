@@ -14,17 +14,56 @@
   </head>
 
   <body>
-      <div class="container-fluid mx-auto vh-100%" style="min-height: 1000px; background-color: indigo;">
-        <% if flash[:notice].present? %>
-           <div class="row pt-5 w-50 mx-auto">
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  <%= flash[:notice] %>
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
-              </div>
-           </div>
-        <% end %>
+      <div class="container-fluid mx-auto vh-100%" style="min-height: 1500px; background-color: indigo;">
+         <div class="row mx-auto" style="width: 1200px;">
+
+            <nav class="navbar navbar-expand-xl sticky-top rounded-3 ms-5 mb-3 pt-2" style="background-color: purple;">
+
+                <div class="container-fluid">
+                    <div class="navbar-brand text-white"><%= link_to "Askmepls", root_path %>
+                    </div>
+
+                    <div class='nav-link text-white'>
+                      <% if current_user.present? %>
+                      <%= "@#{current_user.nickname}" %>
+                    </div>
+
+                    <div class='nav-link text-white'>
+                      <%= button_to "Выйти", session_path, method: :delete,
+                      form: {data: {turbo_confirm: 'Are you sure to quit?'}},
+                      title: 'Выйти' , class: "btn btn-danger btn-sm" %>
+
+                      <% else %>
+
+                      <%= link_to 'Регистрация', new_user_path, class: "btn btn-warning" %>
+                      <%= link_to 'Вход', new_session_path, class: "btn btn-success" %>
+
+                      <% end %>
+                    </div>
+
+                </div>
+
+            </nav>
+            <div class="row w-50 mx-auto">
+              <% if flash[:notice].present? %>
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <%= flash[:notice] %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+                    </div>
+
+              <% elsif flash[:alert].present? %>
+
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= flash[:alert] %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
+                    </div>
+              <% end %>
+            </div>
 
         <%= yield %>
+
       </div>
+    </div>
   </body>
 </html>
