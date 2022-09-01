@@ -2,17 +2,22 @@
       <%= link_to "Создать новый вопрос", new_question_path , class: "btn btn-success"%>
     </div>
 
-    <div class="row rounded-3 bg-white ms-5 mb-3 pt-2">
-      <%= render 'form', question: @question %>
-    </div>
 
   <h2 class="container rounded-3 pt-2 pb-2 ms-5 mt-5 text-center text-light" style="background-color: purple;">
+    Всего
     <%= @questions.count %>
     <%= inclination(@questions.count, 'вопрос', 'вопроса','вопросов') %>
   </h2>
 
+
+
   <% @questions.each do |question| %>
     <div class="row rounded-3 bg-white ms-5 mb-3 pb-4 text-break">
+
+
+        Вопрос номер <%= question.id %>
+
       <%= render question %>
-    </div>
+                </div>
+            
   <% end %>
